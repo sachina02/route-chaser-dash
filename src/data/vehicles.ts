@@ -166,6 +166,10 @@ function makeStops(
   });
 }
 
+function routeStops(id: string): string[] {
+  return routes.find((r) => r.id === id)?.stops ?? [];
+}
+
 export const vehicles: Vehicle[] = [
   {
     id: "V-1042",
@@ -184,7 +188,7 @@ export const vehicles: Vehicle[] = [
     headsign: "University North",
     position: { x: 46, y: 52 },
     nextStopId: "museum-quarter-3",
-    stops: makeStops(routes[0].stops, 9, 5, 7, 0, 3),
+    stops: makeStops(routeStops("R12"), 9, 5, 7, 0, 3),
   },
   {
     id: "V-1077",
@@ -203,7 +207,7 @@ export const vehicles: Vehicle[] = [
     headsign: "Harbour Gate",
     position: { x: 22, y: 66 },
     nextStopId: "civic-square-2",
-    stops: makeStops(routes[0].stops, 9, 22, 7, 6, 2),
+    stops: makeStops(routeStops("R12"), 9, 22, 7, 6, 2),
   },
   {
     id: "V-4003",
@@ -222,7 +226,7 @@ export const vehicles: Vehicle[] = [
     headsign: "Airport T2",
     position: { x: 61, y: 18 },
     nextStopId: "airport-t1-3",
-    stops: makeStops(routes[1].stops, 9, 0, 11, -1, 3),
+    stops: makeStops(routeStops("R4"), 9, 0, 11, -1, 3),
   },
   {
     id: "V-4011",
@@ -241,7 +245,7 @@ export const vehicles: Vehicle[] = [
     headsign: "Depot",
     position: { x: 14, y: 26 },
     nextStopId: "central-terminal-0",
-    stops: makeStops(routes[1].stops, 10, 15, 11, 0, 0),
+    stops: makeStops(routeStops("R4"), 10, 15, 11, 0, 0),
   },
   {
     id: "V-7008",
@@ -260,7 +264,7 @@ export const vehicles: Vehicle[] = [
     headsign: "Green Hills",
     position: { x: 55, y: 54 },
     nextStopId: "hospital-4",
-    stops: makeStops(routes[2].stops, 9, 12, 5, 1, 4),
+    stops: makeStops(routeStops("R7"), 9, 12, 5, 1, 4),
   },
   {
     id: "V-7015",
@@ -279,7 +283,7 @@ export const vehicles: Vehicle[] = [
     headsign: "Riverside Depot",
     position: { x: 33, y: 42 },
     nextStopId: "foundry-lane-1",
-    stops: makeStops(routes[2].stops, 9, 30, 5, 11, 1),
+    stops: makeStops(routeStops("R7"), 9, 30, 5, 11, 1),
   },
   {
     id: "V-2101",
@@ -298,7 +302,7 @@ export const vehicles: Vehicle[] = [
     headsign: "Night Loop",
     position: { x: 57, y: 74 },
     nextStopId: "old-mill-2",
-    stops: makeStops(routes[3].stops, 22, 40, 9, 2, 1),
+    stops: makeStops(routeStops("R21"), 22, 40, 9, 2, 1),
   },
   {
     id: "V-2114",
@@ -317,7 +321,7 @@ export const vehicles: Vehicle[] = [
     headsign: "Night Loop",
     position: { x: 30, y: 78 },
     nextStopId: "market-hall-3",
-    stops: makeStops(routes[3].stops, 23, 5, 9, 0, 3),
+    stops: makeStops(routeStops("R21"), 23, 5, 9, 0, 3),
   },
 ];
 
