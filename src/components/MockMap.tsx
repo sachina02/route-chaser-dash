@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 
 interface MockMapProps {
   vehicles: Vehicle[];
-  highlightRouteId?: string;
-  selectedVehicleId?: string;
-  className?: string;
-  interactive?: boolean;
+  highlightRouteId?: string | undefined;
+  selectedVehicleId?: string | undefined;
+  className?: string | undefined;
+  interactive?: boolean | undefined;
 }
 
 /**
